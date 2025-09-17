@@ -11,7 +11,6 @@ public class Main {
 	private static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		System.out.println("Sistema de Pedidos do Restaurante do Xandão");
 		boolean executando = true;
 		
 		while (executando) {
@@ -44,7 +43,7 @@ public class Main {
 
 	}
 	public static void exibirMenu() {
-		System.out.println("\n===== MENU PRINCIPAL DO RESTAURANTE DO XANDÃO =====\n");
+		System.out.println("===== SISTEMA DE PEDIDOS DO RESTAURANTE DO XANDÃO =====\n");
         System.out.println("1. Registrar Pedido");
         System.out.println("2. Remover Pedido");
         System.out.println("3. Listar Pedidos");
