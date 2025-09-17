@@ -73,9 +73,32 @@ public class Main {
 		}
 		while (!nomeItem.equalsIgnoreCase("fim"));
 		
-		listaDePedidos.add(novoPedido);
-		System.out.println("\n Pedido de número " + novoPedido.getNumero() + " registrado!");
-		proximoNumeroPedido++;
+		if (novoPedido.getItens().isEmpty()) {
+			System.out.println("\nPedido cancelado pois nenhum item foi registrado.");
+		}
+		else {
+			listaDePedidos.add(novoPedido);
+			
+			System.out.println("\n========================================");
+            System.out.println("          Restaurante do Xandão         ");
+            System.out.println("========================================");
+            System.out.println("Pedido N°: " + novoPedido.getNumero());
+            System.out.println("Cliente: " + novoPedido.getNomeCliente());
+            System.out.println("----------------------------------------");
+            System.out.println("Itens:");
+
+            for (Item item : novoPedido.getItens()) {
+                System.out.printf("- %s R$ %.2f\n", item.getNome(), item.getPreco());
+            }
+            
+            System.out.println("----------------------------------------");
+            System.out.printf("Total: R$ %.2f\n", novoPedido.getValorTotal());
+            System.out.println("========================================");
+            System.out.println("      Obrigado pela preferência!     ");
+            System.out.println("========================================\n");
+            
+            proximoNumeroPedido++;
+		}
 	}
 	
 	public static void removerPedido() {
